@@ -2,7 +2,7 @@ package uz.dopustim.demo.service.impl;
 
 import org.springframework.stereotype.Service;
 import uz.dopustim.demo.model.Doctor;
-import uz.dopustim.demo.repository.InMemoryDoctorDAO;
+import uz.dopustim.demo.repository.DoctorDAO;
 import uz.dopustim.demo.service.DoctorService;
 
 import java.util.List;
@@ -10,9 +10,9 @@ import java.util.List;
 @Service
 public class DoctorServiceImpl implements DoctorService {
 
-    private final InMemoryDoctorDAO repository;
+    private final DoctorDAO repository;
 
-    public DoctorServiceImpl(InMemoryDoctorDAO repository) {
+    public DoctorServiceImpl(DoctorDAO repository) {
         this.repository = repository;
     }
 
