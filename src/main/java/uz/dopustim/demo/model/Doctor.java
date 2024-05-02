@@ -8,8 +8,9 @@ import lombok.Setter;
 public class Doctor {
     private String name;
     private String experience;
-    public Doctor(String name, int price)
+    public Doctor(String name, String experience)
     {
         this.name = name;
+        this.experience = experience;
     }
 }
