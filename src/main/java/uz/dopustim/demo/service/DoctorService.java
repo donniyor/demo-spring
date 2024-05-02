@@ -6,7 +6,7 @@ import java.util.List;
 public interface DoctorService {
     List<Doctor> findAll();
     Doctor save(Doctor doctor);
-    Doctor find(Integer id);
-    Doctor update(Doctor doctor);
-    void delete(Integer id);
+    Doctor find(Long id);
+    Doctor update(Long id, Doctor doctor);
+    void delete(Long id);
 }

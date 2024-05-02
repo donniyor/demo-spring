@@ -26,17 +26,17 @@ public class DoctorController {
     }
 
     @GetMapping("find/{id}")
-    public Doctor find(@PathVariable Integer id) {
+    public Doctor find(@PathVariable Long id) {
         return service.find(id);
     }
 
-    @PutMapping("/update")
-    public Doctor update(@RequestBody Doctor doctor) {
-        return service.update(doctor);
+    @PutMapping("/update/{id}")
+    public Doctor update(@PathVariable Long id, @RequestBody Doctor doctor) {
+        return service.update(id, doctor);
     }
 
-    @DeleteMapping("/delete/{name}")
-    public void delete(@PathVariable Integer id)
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id)
     {
         service.delete(id);
     }

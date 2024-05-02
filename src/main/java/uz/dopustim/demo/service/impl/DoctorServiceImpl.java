@@ -27,17 +27,17 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public Doctor find(Integer id) {
+    public Doctor find(Long id) {
         return repository.find(id);
     }
 
     @Override
-    public Doctor update(Doctor doctor) {
-        return repository.update(doctor);
+    public Doctor update(Long id, Doctor doctor) {
+        return repository.update(id, doctor);
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         repository.delete(id);
     }
 }

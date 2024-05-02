@@ -24,15 +24,22 @@ public class DoctorDAO {
         return doctor;
     }
 
-    public Doctor find(Integer id) {
+    public Doctor find(Long id) {
         return entityManager.find(Doctor.class, id);
     }
 
-    public Doctor update(Doctor doctor) {
-        return entityManager.merge(doctor);
+    public Doctor update(Long id, Doctor doctor) {
+        Doctor entity = find(id);
+        if (entity != null) {
+            entity.setName(doctor.getName());
+            entity.setExperience(doctor.getExperience());
+            entityManager.merge(entity);
+            return entity;
+        }
+        return null;
     }
 
-    public void delete(Integer id) {
+    public void delete(Long id) {
         Doctor doctor = entityManager.find(Doctor.class, id);
         if (doctor != null) {
             entityManager.remove(doctor);
